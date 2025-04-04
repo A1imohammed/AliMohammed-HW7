@@ -15,15 +15,15 @@ private:
     ofstream stream;
 
 public:
-    MYGPIO(int number); // constructor
+    MYGPIO(int number); 
     int getNumber();
-    void setDirection(int dir);  // 0 for input, 1 for output
+    void setDirection(int dir);  
     string getDirection();
-    void setValue(int val);      // 0 or 1
+    void setValue(int val);      
     int getValue();
     void toggleOutput();
-    void toggleOutputNumberOfTimes(int n, int delay); // delay in milliseconds
-    ~MYGPIO(); // destructor
+    void toggleOutputNumberOfTimes(int n, int delay); 
+    ~MYGPIO(); 
 };
 
 #endif
