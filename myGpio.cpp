@@ -8,12 +8,11 @@ MYGPIO::MYGPIO(int number) {
     this->name = "gpio" + to_string(number);
     this->path = "/sys/class/gpio/" + name + "/";
 
-    // Export the GPIO pin
     ofstream exportFile("/sys/class/gpio/export");
     exportFile << number;
     exportFile.close();
 
-    usleep(100000); // Small delay for sysfs to set up
+    usleep(100000); 
 }
 
 void MYGPIO::write(string path, string filename, string value) {
@@ -65,7 +64,7 @@ void MYGPIO::toggleOutput() {
 void MYGPIO::toggleOutputNumberOfTimes(int n, int delay) {
     for (int i = 0; i < n; ++i) {
         toggleOutput();
-        usleep(delay * 1000); // delay in milliseconds
+        usleep(delay * 1000); 
     }
 }
 
